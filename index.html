@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inmobiliaria de lujo en Madrid. Compra, venta y alquiler de propiedades exclusivas en las mejores zonas. Pisos, casas, áticos y chalets.">
+    <title>Elite Properties | Inmobiliaria de Lujo en Madrid</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-contact">
+                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Calle Serrano 50, Madrid</span>
+                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg> +34 91 000 00 00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="header-container">
+                <a href="/" class="logo">ELITE<span>PROPERTIES</span></a>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/comprar.html">Comprar</a></li>
+                        <li><a href="/alquilar.html">Alquilar</a></li>
+                        <li><a href="/vender.html">Vender</a></li>
+                        <li><a href="#zonas">Zonas</a></li>
+                        <li><a href="#agencia">Agencia</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="#contacto" class="btn-header">Valoración gratuita</a>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80')"></div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80')"></div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80')"></div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1>Encuentra tu hogar <span>perfecto</span></h1>
+            <p>Propiedades exclusivas en las zonas más prestigiosas de Madrid</p>
+
+            <!-- Search Box -->
+            <div class="search-box">
+                <div class="search-tabs">
+                    <button class="search-tab active" data-type="comprar">Comprar</button>
+                    <button class="search-tab" data-type="alquilar">Alquilar</button>
+                </div>
+                <form class="search-form">
+                    <div class="search-field search-field-large">
+                        <label>Ubicación</label>
+                        <input type="text" placeholder="Barrio, zona o dirección..." name="ubicacion">
+                    </div>
+                    <div class="search-field">
+                        <label>Tipo</label>
+                        <select name="tipo">
+                            <option value="">Cualquiera</option>
+                            <option value="piso">Piso</option>
+                            <option value="casa">Casa / Chalet</option>
+                            <option value="atico">Ático</option>
+                            <option value="duplex">Dúplex</option>
+                            <option value="local">Local</option>
+                        </select>
+                    </div>
+                    <div class="search-field">
+                        <label>Precio máximo</label>
+                        <select name="precio">
+                            <option value="">Sin límite</option>
+                            <option value="300000">300.000 €</option>
+                            <option value="500000">500.000 €</option>
+                            <option value="750000">750.000 €</option>
+                            <option value="1000000">1.000.000 €</option>
+                            <option value="2000000">2.000.000 €</option>
+                            <option value="5000000">5.000.000 €</option>
+                        </select>
+                    </div>
+                    <div class="search-field">
+                        <label>Habitaciones</label>
+                        <select name="habitaciones">
+                            <option value="">Cualquiera</option>
+                            <option value="1">1+</option>
+                            <option value="2">2+</option>
+                            <option value="3">3+</option>
+                            <option value="4">4+</option>
+                            <option value="5">5+</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-search">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                        Buscar
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Hero Navigation -->
+        <div class="hero-nav">
+            <button class="hero-nav-btn" data-slide="0"></button>
+            <button class="hero-nav-btn" data-slide="1"></button>
+            <button class="hero-nav-btn" data-slide="2"></button>
+        </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="quick-actions">
+        <div class="container">
+            <div class="quick-actions-grid">
+                <a href="/comprar.html" class="quick-action">
+                    <div class="quick-action-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                    </div>
+                    <div class="quick-action-text">
+                        <h3>Comprar</h3>
+                        <p>Encuentra tu próximo hogar</p>
+                    </div>
+                    <span class="quick-action-arrow">→</span>
+                </a>
+                <a href="/alquilar.html" class="quick-action">
+                    <div class="quick-action-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    </div>
+                    <div class="quick-action-text">
+                        <h3>Alquilar</h3>
+                        <p>Alquiler residencial y temporal</p>
+                    </div>
+                    <span class="quick-action-arrow">→</span>
+                </a>
+                <a href="/vender.html" class="quick-action">
+                    <div class="quick-action-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <div class="quick-action-text">
+                        <h3>Vender</h3>
+                        <p>Valoración gratuita de tu propiedad</p>
+                    </div>
+                    <span class="quick-action-arrow">→</span>
+                </a>
+                <a href="#valoracion" class="quick-action highlight">
+                    <div class="quick-action-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <div class="quick-action-text">
+                        <h3>Valoración</h3>
+                        <p>¿Cuánto vale tu vivienda?</p>
+                    </div>
+                    <span class="quick-action-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="properties" id="propiedades">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <span class="tag">Selección exclusiva</span>
+                    <h2>Propiedades destacadas</h2>
+                </div>
+                <a href="/comprar.html" class="btn-link">Ver todas →</a>
+            </div>
+
+            <div class="properties-grid">
+                <!-- Property 1 -->
+                <article class="property-card">
+                    <a href="/propiedad/atico-salamanca.html" class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Ático de lujo en Salamanca" loading="lazy">
+                        <div class="property-badge">Exclusivo</div>
+                        <button class="property-fav" aria-label="Añadir a favoritos">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <div class="property-gallery-count">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            24
+                        </div>
+                    </a>
+                    <div class="property-content">
+                        <div class="property-location">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Salamanca, Madrid
+                        </div>
+                        <h3><a href="/propiedad/atico-salamanca.html">Ático de lujo con terraza panorámica</a></h3>
+                        <div class="property-features">
+                            <span><strong>4</strong> hab.</span>
+                            <span><strong>3</strong> baños</span>
+                            <span><strong>320</strong> m²</span>
+                            <span><strong>80</strong> m² terraza</span>
+                        </div>
+                        <div class="property-footer">
+                            <span class="property-price">2.850.000 €</span>
+                            <span class="property-ref">Ref. EP-2847</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Property 2 -->
+                <article class="property-card">
+                    <a href="/propiedad/villa-moraleja.html" class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Villa en La Moraleja" loading="lazy">
+                        <div class="property-badge sale">Venta</div>
+                        <button class="property-fav" aria-label="Añadir a favoritos">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <div class="property-gallery-count">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            32
+                        </div>
+                    </a>
+                    <div class="property-content">
+                        <div class="property-location">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            La Moraleja, Madrid
+                        </div>
+                        <h3><a href="/propiedad/villa-moraleja.html">Villa contemporánea con piscina</a></h3>
+                        <div class="property-features">
+                            <span><strong>6</strong> hab.</span>
+                            <span><strong>5</strong> baños</span>
+                            <span><strong>850</strong> m²</span>
+                            <span><strong>2.000</strong> m² parcela</span>
+                        </div>
+                        <div class="property-footer">
+                            <span class="property-price">4.500.000 €</span>
+                            <span class="property-ref">Ref. EP-3102</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Property 3 -->
+                <article class="property-card">
+                    <a href="/propiedad/piso-chamberi.html" class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Piso en Chamberí" loading="lazy">
+                        <div class="property-badge rent">Alquiler</div>
+                        <button class="property-fav" aria-label="Añadir a favoritos">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <div class="property-gallery-count">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            18
+                        </div>
+                    </a>
+                    <div class="property-content">
+                        <div class="property-location">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Chamberí, Madrid
+                        </div>
+                        <h3><a href="/propiedad/piso-chamberi.html">Piso señorial reformado</a></h3>
+                        <div class="property-features">
+                            <span><strong>3</strong> hab.</span>
+                            <span><strong>2</strong> baños</span>
+                            <span><strong>180</strong> m²</span>
+                        </div>
+                        <div class="property-footer">
+                            <span class="property-price">4.500 €<small>/mes</small></span>
+                            <span class="property-ref">Ref. EP-1893</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Property 4 -->
+                <article class="property-card">
+                    <a href="/propiedad/duplex-retiro.html" class="property-image">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80" alt="Dúplex en Retiro" loading="lazy">
+                        <button class="property-fav" aria-label="Añadir a favoritos">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <div class="property-gallery-count">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            21
+                        </div>
+                    </a>
+                    <div class="property-content">
+                        <div class="property-location">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Retiro, Madrid
+                        </div>
+                        <h3><a href="/propiedad/duplex-retiro.html">Dúplex con jardín privado</a></h3>
+                        <div class="property-features">
+                            <span><strong>4</strong> hab.</span>
+                            <span><strong>3</strong> baños</span>
+                            <span><strong>280</strong> m²</span>
+                            <span><strong>100</strong> m² jardín</span>
+                        </div>
+                        <div class="property-footer">
+                            <span class="property-price">1.950.000 €</span>
+                            <span class="property-ref">Ref. EP-2456</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Property 5 -->
+                <article class="property-card">
+                    <a href="/propiedad/piso-chamartin.html" class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80" alt="Piso en Chamartín" loading="lazy">
+                        <div class="property-badge new">Nuevo</div>
+                        <button class="property-fav" aria-label="Añadir a favoritos">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <div class="property-gallery-count">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            15
+                        </div>
+                    </a>
+                    <div class="property-content">
+                        <div class="property-location">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Chamartín, Madrid
+                        </div>
+                        <h3><a href="/propiedad/piso-chamartin.html">Piso de obra nueva premium</a></h3>
+                        <div class="property-features">
+                            <span><strong>3</strong> hab.</span>
+                            <span><strong>2</strong> baños</span>
+                            <span><strong>145</strong> m²</span>
+                            <span><strong>2</strong> plazas</span>
+                        </div>
+                        <div class="property-footer">
+                            <span class="property-price">985.000 €</span>
+                            <span class="property-ref">Ref. EP-3201</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Property 6 -->
+                <article class="property-card">
+                    <a href="/propiedad/chalet-pozuelo.html" class="property-image">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80" alt="Chalet en Pozuelo" loading="lazy">
+                        <button class="property-fav" aria-label="Añadir a favoritos">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <div class="property-gallery-count">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            28
+                        </div>
+                    </a>
+                    <div class="property-content">
+                        <div class="property-location">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Pozuelo de Alarcón, Madrid
+                        </div>
+                        <h3><a href="/propiedad/chalet-pozuelo.html">Chalet independiente con spa</a></h3>
+                        <div class="property-features">
+                            <span><strong>7</strong> hab.</span>
+                            <span><strong>6</strong> baños</span>
+                            <span><strong>1.200</strong> m²</span>
+                            <span><strong>3.500</strong> m² parcela</span>
+                        </div>
+                        <div class="property-footer">
+                            <span class="property-price">6.800.000 €</span>
+                            <span class="property-ref">Ref. EP-2901</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valuation CTA -->
+    <section class="valuation-cta" id="valoracion">
+        <div class="container">
+            <div class="valuation-grid">
+                <div class="valuation-content">
+                    <span class="tag">Servicio gratuito</span>
+                    <h2>¿Quieres vender tu propiedad?</h2>
+                    <p>Obtén una valoración profesional de tu vivienda sin compromiso. Nuestros expertos analizarán el mercado y te proporcionarán un precio real y actualizado.</p>
+                    <ul class="valuation-benefits">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg> Valoración en 24-48 horas</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg> Análisis de mercado incluido</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg> Sin compromiso</li>
+                    </ul>
+                    <a href="/vender.html" class="btn btn-primary">Solicitar valoración</a>
+                </div>
+                <div class="valuation-form-wrapper">
+                    <form class="valuation-form">
+                        <h3>Valoración rápida</h3>
+                        <div class="form-group">
+                            <input type="text" placeholder="Dirección de la propiedad" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <select required>
+                                    <option value="">Tipo de propiedad</option>
+                                    <option value="piso">Piso</option>
+                                    <option value="casa">Casa / Chalet</option>
+                                    <option value="atico">Ático</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Superficie m²" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" placeholder="Teléfono" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Solicitar valoración</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zones Section -->
+    <section class="zones" id="zonas">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <span class="tag">Ubicaciones</span>
+                    <h2>Explora nuestras zonas</h2>
+                </div>
+            </div>
+
+            <div class="zones-grid">
+                <a href="/zonas/salamanca.html" class="zone-card zone-large">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Barrio Salamanca" loading="lazy">
+                    <div class="zone-overlay"></div>
+                    <div class="zone-content">
+                        <h3>Salamanca</h3>
+                        <p>125 propiedades</p>
+                    </div>
+                </a>
+                <a href="/zonas/chamberi.html" class="zone-card">
+                    <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=600&q=80" alt="Chamberí" loading="lazy">
+                    <div class="zone-overlay"></div>
+                    <div class="zone-content">
+                        <h3>Chamberí</h3>
+                        <p>89 propiedades</p>
+                    </div>
+                </a>
+                <a href="/zonas/chamartin.html" class="zone-card">
+                    <img src="https://images.unsplash.com/photo-1543489822-c49534f3271f?w=600&q=80" alt="Chamartín" loading="lazy">
+                    <div class="zone-overlay"></div>
+                    <div class="zone-content">
+                        <h3>Chamartín</h3>
+                        <p>67 propiedades</p>
+                    </div>
+                </a>
+                <a href="/zonas/retiro.html" class="zone-card">
+                    <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=600&q=80" alt="Retiro" loading="lazy">
+                    <div class="zone-overlay"></div>
+                    <div class="zone-content">
+                        <h3>Retiro</h3>
+                        <p>54 propiedades</p>
+                    </div>
+                </a>
+                <a href="/zonas/la-moraleja.html" class="zone-card zone-wide">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="La Moraleja" loading="lazy">
+                    <div class="zone-overlay"></div>
+                    <div class="zone-content">
+                        <h3>La Moraleja</h3>
+                        <p>42 propiedades</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agency Section -->
+    <section class="agency" id="agencia">
+        <div class="container">
+            <div class="agency-grid">
+                <div class="agency-image">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" alt="Oficina Elite Properties" loading="lazy">
+                </div>
+                <div class="agency-content">
+                    <span class="tag">Nuestra agencia</span>
+                    <h2>Experiencia y dedicación desde 1985</h2>
+                    <p>Con más de 35 años de experiencia en el mercado inmobiliario de lujo, Elite Properties se ha consolidado como referente en la intermediación de propiedades exclusivas en Madrid.</p>
+                    <p>Nuestro equipo de profesionales ofrece un servicio personalizado y discreto, adaptado a las necesidades de cada cliente.</p>
+                    <div class="agency-stats">
+                        <div class="stat">
+                            <span class="stat-number">35+</span>
+                            <span class="stat-label">Años de experiencia</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2.500+</span>
+                            <span class="stat-label">Propiedades vendidas</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Clientes satisfechos</span>
+                        </div>
+                    </div>
+                    <a href="/agencia.html" class="btn btn-outline">Conocer más →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Properties Slider -->
+    <section class="latest-properties">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <span class="tag">Últimas incorporaciones</span>
+                    <h2>Nuevas propiedades</h2>
+                </div>
+                <div class="slider-nav">
+                    <button class="slider-btn prev" aria-label="Anterior">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                    <button class="slider-btn next" aria-label="Siguiente">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="properties-slider">
+                <div class="properties-slider-track">
+                    <!-- Slide 1 -->
+                    <article class="property-card-mini">
+                        <a href="#" class="property-image-mini">
+                            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&q=80" alt="Propiedad" loading="lazy">
+                        </a>
+                        <div class="property-content-mini">
+                            <span class="property-location-mini">Salamanca</span>
+                            <h4>Piso exterior reformado</h4>
+                            <span class="property-price-mini">890.000 €</span>
+                        </div>
+                    </article>
+                    <!-- Slide 2 -->
+                    <article class="property-card-mini">
+                        <a href="#" class="property-image-mini">
+                            <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=400&q=80" alt="Propiedad" loading="lazy">
+                        </a>
+                        <div class="property-content-mini">
+                            <span class="property-location-mini">Chamberí</span>
+                            <h4>Ático con vistas</h4>
+                            <span class="property-price-mini">1.250.000 €</span>
+                        </div>
+                    </article>
+                    <!-- Slide 3 -->
+                    <article class="property-card-mini">
+                        <a href="#" class="property-image-mini">
+                            <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=400&q=80" alt="Propiedad" loading="lazy">
+                        </a>
+                        <div class="property-content-mini">
+                            <span class="property-location-mini">Retiro</span>
+                            <h4>Piso con terraza</h4>
+                            <span class="property-price-mini">675.000 €</span>
+                        </div>
+                    </article>
+                    <!-- Slide 4 -->
+                    <article class="property-card-mini">
+                        <a href="#" class="property-image-mini">
+                            <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=400&q=80" alt="Propiedad" loading="lazy">
+                        </a>
+                        <div class="property-content-mini">
+                            <span class="property-location-mini">Chamartín</span>
+                            <h4>Dúplex moderno</h4>
+                            <span class="property-price-mini">1.100.000 €</span>
+                        </div>
+                    </article>
+                    <!-- Slide 5 -->
+                    <article class="property-card-mini">
+                        <a href="#" class="property-image-mini">
+                            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&q=80" alt="Propiedad" loading="lazy">
+                        </a>
+                        <div class="property-content-mini">
+                            <span class="property-location-mini">La Moraleja</span>
+                            <h4>Villa con piscina</h4>
+                            <span class="property-price-mini">3.200.000 €</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="tag">Contacto</span>
+                    <h2>Estamos aquí para ayudarte</h2>
+                    <p>Visítanos en nuestra oficina o ponte en contacto con nosotros. Estaremos encantados de atenderte.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <div>
+                                <strong>Oficina Central</strong>
+                                <span>Calle Serrano 50, 28001 Madrid</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            <div>
+                                <strong>Teléfono</strong>
+                                <span>+34 91 000 00 00</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            <div>
+                                <strong>Email</strong>
+                                <span>info@eliteproperties.es</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-hours">
+                        <strong>Horario</strong>
+                        <p>Lunes a Viernes: 9:30 - 19:00<br>Sábados: 10:00 - 14:00</p>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre *</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellidos">Apellidos</label>
+                            <input type="text" id="apellidos" name="apellidos">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="asunto">Asunto</label>
+                        <select id="asunto" name="asunto">
+                            <option value="">Seleccionar...</option>
+                            <option value="comprar">Quiero comprar</option>
+                            <option value="vender">Quiero vender</option>
+                            <option value="alquilar">Quiero alquilar</option>
+                            <option value="valoracion">Solicitar valoración</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+                    </div>
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="privacidad" name="privacidad" required>
+                        <label for="privacidad">Acepto la <a href="/privacidad.html">política de privacidad</a></label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo">ELITE<span>PROPERTIES</span></a>
+                    <p>Inmobiliaria de lujo especializada en propiedades exclusivas en Madrid y alrededores.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Comprar</h4>
+                    <ul>
+                        <li><a href="#">Pisos en venta</a></li>
+                        <li><a href="#">Casas y chalets</a></li>
+                        <li><a href="#">Áticos</a></li>
+                        <li><a href="#">Obra nueva</a></li>
+                        <li><a href="#">Locales</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Alquilar</h4>
+                    <ul>
+                        <li><a href="#">Pisos en alquiler</a></li>
+                        <li><a href="#">Casas en alquiler</a></li>
+                        <li><a href="#">Alquiler temporal</a></li>
+                        <li><a href="#">Alquiler vacacional</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Zonas</h4>
+                    <ul>
+                        <li><a href="#">Salamanca</a></li>
+                        <li><a href="#">Chamberí</a></li>
+                        <li><a href="#">Chamartín</a></li>
+                        <li><a href="#">Retiro</a></li>
+                        <li><a href="#">La Moraleja</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#">Sobre nosotros</a></li>
+                        <li><a href="#">Equipo</a></li>
+                        <li><a href="#">Trabaja con nosotros</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Elite Properties. Todos los derechos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Aviso legal</a>
+                    <a href="#">Privacidad</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

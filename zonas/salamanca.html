@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pisos y casas de lujo en venta y alquiler en el Barrio de Salamanca, Madrid. Propiedades exclusivas en Recoletos, Goya, Lista y Castellana.">
+    <title>Propiedades en Salamanca, Madrid | Elite Properties</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        .page-hero {
+            position: relative;
+            height: 50vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80') center/cover;
+            margin-top: 0;
+        }
+
+        .page-hero-content {
+            max-width: 800px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+        }
+
+        .breadcrumb a {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--color-accent);
+        }
+
+        .breadcrumb span {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .page-hero h1 {
+            color: var(--color-white);
+            margin-bottom: 1rem;
+        }
+
+        .page-hero p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            max-width: 600px;
+        }
+
+        .zone-stats-bar {
+            display: flex;
+            gap: 3rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .zone-stat {
+            text-align: left;
+        }
+
+        .zone-stat-value {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            display: block;
+        }
+
+        .zone-stat-label {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .filter-section {
+            background: var(--color-white);
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .filter-count {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+        }
+
+        .filter-count strong {
+            color: var(--color-primary);
+        }
+
+        .filter-options {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .filter-options select {
+            padding: 0.6rem 2.5rem 0.6rem 1rem;
+            border: 1px solid var(--color-border);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            background: var(--color-white);
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+        }
+
+        .view-toggle {
+            display: flex;
+            border: 1px solid var(--color-border);
+        }
+
+        .view-toggle button {
+            padding: 0.6rem 1rem;
+            background: var(--color-white);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .view-toggle button.active {
+            background: var(--color-primary);
+        }
+
+        .view-toggle button.active svg {
+            color: var(--color-white);
+        }
+
+        .view-toggle svg {
+            width: 18px;
+            height: 18px;
+            color: var(--color-text-light);
+        }
+
+        .zone-content-section {
+            background: var(--color-off-white);
+            padding: 3rem 0;
+        }
+
+        .zone-description {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .zone-description h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .zone-description p {
+            color: var(--color-text-light);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .subzones-list {
+            background: var(--color-white);
+            padding: 1.5rem;
+        }
+
+        .subzones-list h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .subzone-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--color-border);
+            font-size: 0.9rem;
+        }
+
+        .subzone-link:last-child {
+            border-bottom: none;
+        }
+
+        .subzone-link span:first-child {
+            color: var(--color-text);
+        }
+
+        .subzone-link span:last-child {
+            color: var(--color-text-muted);
+            font-size: 0.8rem;
+        }
+
+        .subzone-link:hover span:first-child {
+            color: var(--color-accent);
+        }
+
+        .properties-section {
+            padding: 3rem 0 5rem;
+            background: var(--color-off-white);
+        }
+
+        .load-more {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .zone-stats-bar {
+                flex-wrap: wrap;
+                gap: 1.5rem;
+            }
+
+            .zone-description {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-options {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header" class="scrolled">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-contact">
+                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Calle Serrano 50, Madrid</span>
+                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg> +34 91 000 00 00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="header-container">
+                <a href="/" class="logo">ELITE<span>PROPERTIES</span></a>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/comprar.html">Comprar</a></li>
+                        <li><a href="/alquilar.html">Alquilar</a></li>
+                        <li><a href="/vender.html">Vender</a></li>
+                        <li><a href="/#zonas">Zonas</a></li>
+                        <li><a href="/#agencia">Agencia</a></li>
+                        <li><a href="/#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="/#contacto" class="btn-header">Valoración gratuita</a>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <nav class="breadcrumb">
+                    <a href="/">Inicio</a>
+                    <span>/</span>
+                    <a href="/#zonas">Zonas</a>
+                    <span>/</span>
+                    <span style="color: rgba(255,255,255,0.9);">Salamanca</span>
+                </nav>
+                <h1>Propiedades en Salamanca</h1>
+                <p>Descubre las mejores propiedades en el barrio más exclusivo de Madrid. Pisos señoriales, áticos con terraza y residencias de lujo.</p>
+
+                <div class="zone-stats-bar">
+                    <div class="zone-stat">
+                        <span class="zone-stat-value">125</span>
+                        <span class="zone-stat-label">Propiedades</span>
+                    </div>
+                    <div class="zone-stat">
+                        <span class="zone-stat-value">8.500€</span>
+                        <span class="zone-stat-label">Precio medio/m²</span>
+                    </div>
+                    <div class="zone-stat">
+                        <span class="zone-stat-value">6</span>
+                        <span class="zone-stat-label">Subzonas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <div class="filter-section">
+        <div class="container">
+            <div class="filter-container">
+                <p class="filter-count">Mostrando <strong>125 propiedades</strong> en Salamanca</p>
+                <div class="filter-options">
+                    <select name="operacion">
+                        <option value="">Comprar / Alquilar</option>
+                        <option value="comprar">Comprar</option>
+                        <option value="alquilar">Alquilar</option>
+                    </select>
+                    <select name="tipo">
+                        <option value="">Tipo de propiedad</option>
+                        <option value="piso">Piso</option>
+                        <option value="atico">Ático</option>
+                        <option value="duplex">Dúplex</option>
+                        <option value="casa">Casa</option>
+                    </select>
+                    <select name="orden">
+                        <option value="recientes">Más recientes</option>
+                        <option value="precio-asc">Precio: menor a mayor</option>
+                        <option value="precio-desc">Precio: mayor a menor</option>
+                        <option value="superficie">Mayor superficie</option>
+                    </select>
+                    <div class="view-toggle">
+                        <button class="active" aria-label="Vista cuadrícula">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                        </button>
+                        <button aria-label="Vista lista">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Zone Content -->
+    <section class="zone-content-section">
+        <div class="container">
+            <div class="zone-description">
+                <div>
+                    <h2>Vivir en el Barrio de Salamanca</h2>
+                    <p>El Barrio de Salamanca es el distrito más exclusivo y elegante de Madrid. Situado en el corazón de la capital, destaca por su arquitectura señorial, amplias avenidas arboladas y una oferta comercial y gastronómica de primer nivel.</p>
+                    <p>Las propiedades en Salamanca se caracterizan por sus techos altos, molduras originales y acabados de alta calidad. Desde pisos en fincas clásicas hasta modernos áticos con terraza, este barrio ofrece las mejores opciones para quienes buscan viviendas de lujo en Madrid.</p>
+                </div>
+                <div class="subzones-list">
+                    <h3>Subzonas</h3>
+                    <a href="#" class="subzone-link">
+                        <span>Recoletos</span>
+                        <span>32 propiedades</span>
+                    </a>
+                    <a href="#" class="subzone-link">
+                        <span>Goya</span>
+                        <span>28 propiedades</span>
+                    </a>
+                    <a href="#" class="subzone-link">
+                        <span>Lista</span>
+                        <span>24 propiedades</span>
+                    </a>
+                    <a href="#" class="subzone-link">
+                        <span>Castellana</span>
+                        <span>21 propiedades</span>
+                    </a>
+                    <a href="#" class="subzone-link">
+                        <span>Fuente del Berro</span>
+                        <span>12 propiedades</span>
+                    </a>
+                    <a href="#" class="subzone-link">
+                        <span>Guindalera</span>
+                        <span>8 propiedades</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties -->
+    <section class="properties-section">
+        <div class="container">
+            <div class="properties-grid">
+                <!-- Property 1 -->
+                <article class="property-card">
+                    <a href="#" class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Ático en Recoletos" loading="lazy">
+                        <div class="property-badge">Exclusivo</div>
+                        <button class="property-fav" aria-label="Favorito">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <div class="property-gallery-count">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            24
+                        </div>
+                    </a>
+                    <div class="property-content">
+                        <div class="property-location">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Recoletos, Salamanca
+                        </div>
+                        <h3><a href="#">Ático de lujo con terraza panorámica</a></h3>
+                        <div class="property-features">
+                            <span><strong>4</strong> hab.</span>
+                            <span><strong>3</strong> baños</span>
+                            <span><strong>320</strong> m²</span>
+                            <span><strong>80</strong> m² terraza</span>
+                        </div>
+                        <div class="property-footer">
+                            <span class="property-price">2.850.000 €</span>
+                            <span class="property-ref">Ref. EP-2847</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Property 2 -->
+                <article class="property-card">
+                    <a href="#" class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80" alt="Piso en Goya" loading="lazy">
+                        <button class="property-fav" aria-label="Favorito">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <div class="property-gallery-count">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            18
+                        </div>
+                    </a>
+                    <div class="property-content">
+                        <div class="property-location">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Goya, Salamanca
+                        </div>
+                        <h3><a href="#">Piso señorial en finca clásica</a></h3>
+                        <div class="property-features">
+                            <span><strong>5</strong> hab.</span>
+                            <span><strong>3</strong> baños</span>
+                            <span><strong>280</strong> m²</span>
+                        </div>
+                        <div class="property-footer">
+                            <span class="property-price">1.890.000 €</span>
+                            <span class="property-ref">Ref. EP-2901</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Property 3 -->
+                <article class="property-card">
+                    <a href="#" class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&q=80" alt="Dúplex en Lista" loading="lazy">
+                        <div class="property-badge new">Nuevo</div>
+                        <button class="property-fav" aria-label="Favorito">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <div class="property-gallery-count">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            15
+                        </div>
+                    </a>
+                    <div class="property-content">
+                        <div class="property-location">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Lista, Salamanca
+                        </div>
+                        <h3><a href="#">Dúplex de diseño contemporáneo</a></h3>
+                        <div class="property-features">
+                            <span><strong>3</strong> hab.</span>
+                            <span><strong>2</strong> baños</span>
+                            <span><strong>195</strong> m²</span>
+                        </div>
+                        <div class="property-footer">
+                            <span class="property-price">1.450.000 €</span>
+                            <span class="property-ref">Ref. EP-3012</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Property 4 -->
+                <article class="property-card">
+                    <a href="#" class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=600&q=80" alt="Piso en Castellana" loading="lazy">
+                        <div class="property-badge rent">Alquiler</div>
+                        <button class="property-fav" aria-label="Favorito">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <div class="property-gallery-count">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            12
+                        </div>
+                    </a>
+                    <div class="property-content">
+                        <div class="property-location">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Castellana, Salamanca
+                        </div>
+                        <h3><a href="#">Piso exterior junto a la Castellana</a></h3>
+                        <div class="property-features">
+                            <span><strong>4</strong> hab.</span>
+                            <span><strong>2</strong> baños</span>
+                            <span><strong>220</strong> m²</span>
+                        </div>
+                        <div class="property-footer">
+                            <span class="property-price">5.500 €<small>/mes</small></span>
+                            <span class="property-ref">Ref. EP-1893</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Property 5 -->
+                <article class="property-card">
+                    <a href="#" class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=600&q=80" alt="Piso reformado" loading="lazy">
+                        <button class="property-fav" aria-label="Favorito">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <div class="property-gallery-count">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            20
+                        </div>
+                    </a>
+                    <div class="property-content">
+                        <div class="property-location">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Recoletos, Salamanca
+                        </div>
+                        <h3><a href="#">Piso reformado con garaje</a></h3>
+                        <div class="property-features">
+                            <span><strong>3</strong> hab.</span>
+                            <span><strong>2</strong> baños</span>
+                            <span><strong>165</strong> m²</span>
+                            <span><strong>1</strong> plaza</span>
+                        </div>
+                        <div class="property-footer">
+                            <span class="property-price">1.195.000 €</span>
+                            <span class="property-ref">Ref. EP-2567</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Property 6 -->
+                <article class="property-card">
+                    <a href="#" class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80" alt="Planta baja con jardín" loading="lazy">
+                        <div class="property-badge">Exclusivo</div>
+                        <button class="property-fav" aria-label="Favorito">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <div class="property-gallery-count">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            28
+                        </div>
+                    </a>
+                    <div class="property-content">
+                        <div class="property-location">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Goya, Salamanca
+                        </div>
+                        <h3><a href="#">Planta baja con jardín privado</a></h3>
+                        <div class="property-features">
+                            <span><strong>4</strong> hab.</span>
+                            <span><strong>3</strong> baños</span>
+                            <span><strong>240</strong> m²</span>
+                            <span><strong>150</strong> m² jardín</span>
+                        </div>
+                        <div class="property-footer">
+                            <span class="property-price">3.200.000 €</span>
+                            <span class="property-ref">Ref. EP-3145</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="load-more">
+                <a href="#" class="btn btn-outline">Cargar más propiedades</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo">ELITE<span>PROPERTIES</span></a>
+                    <p>Inmobiliaria de lujo especializada en propiedades exclusivas en Madrid y alrededores.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Comprar</h4>
+                    <ul>
+                        <li><a href="#">Pisos en venta</a></li>
+                        <li><a href="#">Casas y chalets</a></li>
+                        <li><a href="#">Áticos</a></li>
+                        <li><a href="#">Obra nueva</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Alquilar</h4>
+                    <ul>
+                        <li><a href="#">Pisos en alquiler</a></li>
+                        <li><a href="#">Casas en alquiler</a></li>
+                        <li><a href="#">Alquiler temporal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Zonas</h4>
+                    <ul>
+                        <li><a href="#">Salamanca</a></li>
+                        <li><a href="#">Chamberí</a></li>
+                        <li><a href="#">Chamartín</a></li>
+                        <li><a href="#">Retiro</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#">Sobre nosotros</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Elite Properties. Todos los derechos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Aviso legal</a>
+                    <a href="#">Privacidad</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../main.js"></script>
+</body>
+</html>
